@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixGot - A Movie Booking Website</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/utils.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    
+</head>
+<style>
+h1 {
+            text-align: center;
+        }
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #citySearch {
+            width: 100%;
+            padding: 10px 10px 10px 35px;
+            font-size: 16px;
+            border: 1px solid #0000;
+            
+            border-radius: 5px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .city-btn {
+            background-color: #0000;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .city-btn:hover {
+            background-color: #0000;
+        }
+        .all-cities {
+            columns: 4;
+            column-gap: 20px;
+        }
+        .all-cities p {
+            margin: 0 0 10px 0;
+        }
+</style>
+<body>
+
+    <nav id="navbar">
+        <ul id="navbar-right">
+            <div class="logo"><span id="name">FixGot</span>
+                <i class="fa-solid fa-clapperboard" id="img"></i>
+            </div>
+            <li><a href="index.html">Home</a></li>
+            <li id="th"><a href="#">Theatre</a></li>
+            <li><a href="#">City</a></li>
+            <input type="text" placeholder="Search Movies" id="search">
+        </ul>
+        <ul id="navbar-left">
+            <li id="about"><a href="aboutus.html">About Us</a></li>
+            <li id="contact"><a href="contact.html">Contact Us</a></li>
+            <button id="LogSign" class="btn" onclick="window.location.href='login.html'">Login/Sign Up</button>
+        </ul>
+    </nav>
+
+
+<h1>Select Your City</h1>
+    <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="citySearch" placeholder='Search for "Rajahmundry"'>
+    </div>
+    
+    <h2>Top Cities</h2>
+    <div class="city-grid" id="topCities"></div>
+    
+    <h2>All Cities</h2>
+    <div class="all-cities" id="allCities"></div>
+
+    <script>
+        const topCities = ['Mumbai','Delhi' , 'Bengaluru', 'Chennai', 'Kolkata'  ,   'Hyderabad' , 'Pune' , 'Surat' ,'Jaipur' , 'Ahmedabad'];
+        const allCities = [
+    'Nagpur', 'Nainital', 'Nalgonda', 'Namakkal', 'Nanded', 'Nandurbar', 'Narasaraopet', 'Narsinghpur',
+    'Nashik', 'Navsari', 'Neemuch', 'Nellore', 'Nimbahera', 'Noida', 'North Lakhimpur', 'Ongole',
+    'Orai', 'Osmanabad', 'Palakkad', 'Palanpur', 'Palghar', 'Pali', 'Palladam', 'Palwal',
+    'Panaji', 'Panchkula', 'Pandharpur', 'Panipat', 'Parbhani', 'Patan', 'Pathankot', 'Patiala',
+    'Patna', 'Pilibhit', 'Porbandar', 'Port Blair', 'Pratapgarh', 'Proddatur', 'Puducherry', 'Pune',
+    'Puri', 'Purnia', 'Rae Bareli', 'Raichur', 'Raigad', 'Raigarh', 'Raipur', 'Rajahmundry',
+    'Rajapalayam', 'Rajgarh', 'Rajkot', 'Rajnandgaon', 'Rajsamand', 'Ramanathapuram', 'Ramban', 'Rampur'
+];
+
+
+        function createCityButton(city) {
+            const btn = document.createElement('button');
+            btn.textContent = city;
+            btn.className = 'city-btn';
+            btn.onclick = () => alert(`You selected ${city}`);
+            return btn;
+        }
+
+        const topCitiesContainer = document.getElementById('topCities');
+        topCities.forEach(city => {
+            topCitiesContainer.appendChild(createCityButton(city));
+        });
+
+        const allCitiesContainer = document.getElementById('allCities');
+        allCities.forEach(city => {
+            const p = document.createElement('p');
+            p.textContent = city;
+            allCitiesContainer.appendChild(p);
+        });
+
+        const citySearch = document.getElementById('citySearch');
+        citySearch.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const allCityElements = allCitiesContainer.getElementsByTagName('p');
+            
+            Array.from(allCityElements).forEach(element => {
+                const cityName = element.textContent.toLowerCase();
+                element.style.display = cityName.includes(searchTerm) ? 'block' : 'none';
+            });
+        });
+    </script>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Flixgot</h2>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="../Files/images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../Files/images/x2-removebg-preview.png" alt="Twitter"
+                        style="margin-bottom: 5px;"></a>
+                <a href="#"><img src="../Files/images/bulbul-removebg-preview.png" alt="Instagram"></a>
+                <a href="#"><img src="../Files/images/in-removebg-preview.png" alt="LinkedIn"></a>
+            </div>
+            <div class="footer-contact">
+                <p>Contact Us: support@moviescape.com</p>
+                <p>Call Us: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Flixgot. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/city.js"></script>
+    <script src="https://kit.fontawesome.com/28d81d093f.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
