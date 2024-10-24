@@ -63,11 +63,11 @@ nextBtn.addEventListener("click", () => {
             index++;
         }
         
-        video.src = `/vedio/${movies[index].index}.mp4`;
+        video.src = `../Files/vedio/${movies[index].index}.mp4`;
         movieName.innerHTML = movies[index].title;
         movieDesc.innerHTML = movies[index].summary;
 
-        console.log(`/vedio/${movies[index].index}.mp4`);
+        console.log(`../Files/vedio/${movies[index].index}.mp4`);
 
         video.classList.remove("slide-out");
         movieAbout.classList.remove("slide-out");
