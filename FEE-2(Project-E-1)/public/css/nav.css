@@ -19,7 +19,6 @@
 #navbar-right li{
     padding: 2px 0px;
     margin-right: 23px;
-    transition: all 0.5s;
     cursor: pointer;
 }
 
@@ -33,6 +32,7 @@
     text-decoration: none;
     font-size: 14px;
     color: #fff;
+    transition: all 0.5s;
 }
 
 #search{
@@ -44,7 +44,7 @@
     font-weight: bold;
     padding: 7px 6px;
     position: absolute;
-    right: 0;
+    right: -56px;
     top: 8px;
     color: beige;
 }
@@ -67,13 +67,13 @@
 #navbar-left li{
     padding: 2px 0px;
     margin-right: 23px;
-    transition: all 0.5s;
     cursor: pointer;
 }
 
 #navbar-left li a{
     font-size: 14px;
     text-decoration: none;
+    transition: all 0.5s;
     color: #fff;
 }
 
@@ -94,11 +94,13 @@
     #navbar-left li a{
         font-size: 10px;
         text-decoration: none;
+        transition: all 0.5s;
         color: #fff;
     }
     #navbar-right li a{
         text-decoration: none;
         font-size: 10px;
+        transition: all 0.5s;
         color: #fff;
     }
     .logo{
@@ -151,7 +153,6 @@
     #navbar-right li {
         padding: 2px 0px;
         margin-right: 23px;
-        transition: all 0.5s;
         cursor: pointer;
     }
 
@@ -165,6 +166,7 @@
     #navbar-right li a {
         text-decoration: none;
         font-size: 8px;
+        transition: all 0.5s;
         color: #fff;
     }
 
@@ -199,13 +201,13 @@
     #navbar-left li {
         padding: 2px 0px;
         margin-right: 23px;
-        transition: all 0.5s;
         cursor: pointer;
     }
 
     #navbar-left li a {
         font-size: 10px;
         text-decoration: none;
+        transition: all 0.5s;
         color: #fff;
     }
 
@@ -239,7 +241,6 @@
     #navbar-right li {
         padding: 2px 0px;
         margin-right: 12px;
-        transition: all 0.5s;
         cursor: pointer;
     }
 
@@ -253,6 +254,7 @@
     #navbar-right li a {
         text-decoration: none;
         font-size: 6px;
+        transition: all 0.5s;
         color: #fff;
     }
 
@@ -288,12 +290,12 @@
     #navbar-left li {
         padding: 2px 0px;
         margin-right: 23px;
-        transition: all 0.5s;
         cursor: pointer;
     }
 
     #navbar-left li a {
         font-size: 6px;
+        transition: all 0.5s;
         text-decoration: none;
         color: #fff;
     }
@@ -314,4 +316,8 @@
     margin-right: 40px;
     font-size: 7px;
     }
+}
+
+nav ul li a:hover {
+    border-bottom: 1px solid white;
 }
