@@ -33,7 +33,7 @@ body {
 
 
 #container {
-    height: 61%;
+    height: 71vh;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -46,7 +46,7 @@ body {
 
 
 #video {
-    height: 100%;
+    height: 71vh;
     width: 100%;
     position: absolute;
     z-index: -1;
@@ -83,7 +83,7 @@ nav ul li:hover {
     color: #fff;
     /* background-color: orchid; */
     width: 42%;
-    margin: 49px 43px;
+    margin: 69px 43px;
     padding: 14px 17px;
 }
 
@@ -99,18 +99,18 @@ nav ul li:hover {
 }
 
 
-    #movie-selection-t {
-        /* background-color: #fff; */
-        position: relative;
-        /* z-index: -1; */
-        height: 537px;
-        width: 100%;
-        /* bottom: -509px; */
-        padding: 12px 23px;
-        /* padding-top: 34px; */
-        /* background-color: #000; */
-        margin-bottom: 10px;
-    }
+#movie-selection-t {
+    /* background-color: #fff; */
+    position: relative;
+    /* z-index: -1; */
+    height: 537px;
+    width: 100%;
+    /* bottom: -509px; */
+    padding: 12px 23px;
+    /* padding-top: 34px; */
+    /* background-color: #000; */
+    margin-bottom: 10px;
+}
 
 
 #movie-selection-t>h1 {
@@ -325,6 +325,7 @@ nav ul li:hover {
         width: 84%;
         margin: 49px 43px;
         padding: 14px 17px;
+        /* height: 452px; */
     }
 
     #movie-name {
@@ -340,7 +341,7 @@ nav ul li:hover {
 
     #movie-selection-t {
         position: relative;
-        height: 360px;
+        height: 537px;
         width: 100%;
         padding: 12px 23px;
         margin-bottom: 10px;
@@ -405,7 +406,7 @@ nav ul li:hover {
 
     .movie-section {
         position: relative;
-        height: 349px;
+        height: 537px;
         width: 100%;
         padding: 12px 23px;
         margin-top: 10px;
@@ -559,7 +560,7 @@ nav ul li:hover {
 
     #movie-selection-t {
         position: relative;
-        height: 360px;
+        height: 562px;
         width: 100%;
         padding: 12px 23px;
         margin-bottom: 10px;
@@ -624,7 +625,7 @@ nav ul li:hover {
 
     .movie-section {
         position: relative;
-        height: 349px;
+        height: 562px;
         width: 100%;
         padding: 12px 23px;
         margin-top: 10px;
@@ -731,5 +732,195 @@ hr {
     margin: 0px auto;
     margin-top: 57px;
     border: 1px solid #A1887F;
+}
+
+#city {
+    z-index: 2;
+    position: absolute;
+    width: 80%;
+    top: 8px;
+    height: 43%;
+    background: white;
+    left: 123px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adding a subtle shadow */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#city .location-detect {
+    display: flex;
+    align-items: center;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+#city .location-detect i {
+    margin-right: 8px;
+}
+
+#city input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+#city .popular-cities {
+    display: flex;
+    justify-content: space-around;
+}
+
+#city .popular-cities div {
+    text-align: center;
+}
+
+#city .popular-cities div i {
+    font-size: 32px;
+    color: #7f8c8d;
+}
+
+#city .popular-cities div span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+#city .close-btn {
+    color: rgb(208, 199, 199);
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#cross{
+    /* color: #000; */
+    width: 33px;
+    height: 37%;
+    border-radius: 50%;
+    text-align: center;
+    /* background-color: orange; */
+    transition: all 0.5s ease-out;
+}
+
+#cross:hover{
+    background-color: #282626;
+}
+
+.cityAbout {
+    position: relative; /* Ensure absolute positioning works */
+}
+
+.cityAbout:hover .theater-info {
+    display: block; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 3; 
+}
+
+.cityAbout{
+    cursor: pointer;
+}
+
+#nextBtn{
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    right: 43px;
+    top: 222px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 52px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.5s ease-out;
+    display: none;
+}
+
+#nextBtn:hover{
+    /* display: block; */
+    background: rgb(14, 14, 14);
+}
+#video.slide-out {
+    animation: slideOut 0.5s forwards;
+}
+
+#video.slide-in {
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.cityAbout{
+    color: #000;
+}
+
+#video.slide-out,
+#movie-about.slide-out {
+    animation: slideOut 0.2s forwards;
+}
+
+#video.slide-in,
+#movie-about.slide-in {
+    animation: slideIn 0.2s forwards;
+}
+
+#movie-about.slide-out {
+    animation: slideOut 0.2s forwards;
+}
+
+#movie-about.slide-in {
+    animation: slideIn 0.2s forwards;
+}
+
+.cityAbout {
+    position: relative; /* Ensure absolute positioning works */
+}
+
+.cityAbout:hover .theater-info {
+    display: block; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+.theater-info {
+    display: none;
 }
 

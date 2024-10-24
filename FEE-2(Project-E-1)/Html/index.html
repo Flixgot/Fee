@@ -8,14 +8,63 @@
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/utils.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/cards.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
-
-
-
 <body>
     <div id="container">
-        <video src="../Files/vedio/WhatsApp Video 2024-08-30 at 1.17.03 PM.mp4" id="video" autoplay muted></video>
+        <video src="../Files/vedio/1.mp4" id="video" autoplay="true" muted></video>
+        <div id="city" style="display: none;">
+            <div class="location-detect" style="filter: invert(1); display: flex; justify-content: space-between;">
+                <div>
+                    <i class="fa fa-map-marker-alt" style="color: #e74c3c; filter: invert(1);"></i>
+                    <span style="filter: invert(1); color: #e74c3c;">Detect my location</span>
+                </div>
+                <div class="close-btn">
+                    <div id="cross">&#10005;</div>
+                </div>
+            </div>
+            <input type="text" placeholder="Search for your city" id="citySearch">
+            <div class="popular-cities">
+                <div class="cityAbout">
+                    <i class="fa fa-archway"></i>
+                    <span>Mumbai</span>
+                    <div class="theater-info" style="display: none;">
+                        <p style="color: black; font-size: x-small;">Theater 1</p>
+                        <p style="color: black; font-size: x-small;">Theater 2</p>
+                        <p style="color: black; font-size: x-small;">Theater 3</p>
+                    </div>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-monument"></i>
+                    <span>Delhi-NCR</span>
+                    <div class="theater-info" style="display: none;">
+                        <p style="color: black; font-size: x-small;">Theater A</p>
+                        <p style="color: black; font-size: x-small;">Theater B</p>
+                        <p style="color: black; font-size: x-small;">Theater C</p>
+                    </div>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-building"></i>
+                    <span>Bengaluru</span>
+                    <div class="theater-info" style="display: none; color: black;">
+                        <p style="color: black; font-size: x-small;">Theater X</p>
+                        <p style="color: black; font-size: x-small;">Theater Y</p>
+                        <p style="color: black; font-size: x-small;">Theater Z</p>
+                    </div>
+                </div>
+                <!-- Add similar sections for other cities -->
+            </div>
+        
+            <div class="view-all">
+                <a href="#">View All Cities</a>
+            </div>
+        </div>
+        
+        <div id="nextBtn">
+            <i class="fas fa-chevron-right"></i>
+        </div>
         <nav id="navbar">
             <ul id="navbar-right">
                 <div class="logo"><span id="name">FixGot</span>
@@ -23,7 +72,7 @@
                 </div>
                 <li><a href="index.html">Home</a></li>
                 <li id="th"><a href="#">Theatre</a></li>
-                <li><a href="window.location.href='Citypage.html'">City</a></li>
+                <li><a href="#" id="cityPage">City</a></li>
                 <input type="text" placeholder="Search Movies" id="search">
             </ul>
             <ul id="navbar-left">
@@ -32,13 +81,10 @@
                 <button id="LogSign" class="btn" onclick="window.location.href='login.html'">Login/Sign Up</button>
             </ul>
         </nav>
+        </script>
         <div id="movie-about">
             <div id="movie-name" class="font1">Deadpool And Wolverine</div>
-            <div id="movie-desc" class="font2">"Deadpool 3" (2024) brings Deadpool into the Marvel Cinematic Universe
-                (MCU) alongside Wolverine, marking Hugh Jackman's return to the role. The movie will explore the
-                multiverse, with Deadpool's chaotic antics clashing humorously with Wolverine's seriousness. The plot is
-                expected to feature plenty of action, humor, and meta-references as Deadpool navigates the MCU, leading
-                to potential crossovers and surprises.</div>
+            <div id="movie-desc" class="font2">Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance Authority, but instead recruits a variant of Wolverine to save his universe from extinction.</div>
             <button class="btn" id="book" onclick="window.location.href='booking.html'">Book Now</button>
         </div>
     </div>
@@ -735,8 +781,8 @@
             <p>&copy; 2024 Flixgot. All rights reserved.</p>
         </div>
     </footer>
-    <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/28d81d093f.js" crossorigin="anonymous"></script>
+    <script src="../js/index.js"></script>
 </body>
 
 </html>

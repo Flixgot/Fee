@@ -1,14 +1,12 @@
 
-// script.js
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const stars = document.querySelectorAll('.stars span');
     const averageRatingDisplay = document.getElementById('average-rating');
     let currentRating = 8.5; // Initial average rating
     let totalRatings = 100; // Number of ratings (for calculation)
 
     stars.forEach(star => {
-        star.addEventListener('click', function() {
+        star.addEventListener('click', function () {
             const userRating = parseInt(this.getAttribute('data-value'));
 
             // Update total ratings and calculate new average
@@ -23,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('selected');
         });
 
-        star.addEventListener('mouseover', function() {
+        star.addEventListener('mouseover', function () {
             // Highlight stars up to the hovered one
             const hoverValue = parseInt(this.getAttribute('data-value'));
             stars.forEach(s => {
@@ -35,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        star.addEventListener('mouseout', function() {
+        star.addEventListener('mouseout', function () {
             // Reset stars to only show the user's selected rating
             stars.forEach(s => s.classList.remove('selected'));
         });
@@ -129,6 +127,22 @@ function movePrev() {
 
 
 
+<<<<<<< HEAD
+document.querySelector('.movie-poster').addEventListener('click', function () {
+    document.getElementById('video-overlay').classList.add('active');
+    document.getElementById('movie-trailer').play();
+});
+
+document.getElementById('video-overlay').addEventListener('click', function (e) {
+    if (e.target === this || e.target.tagName === 'VIDEO') {
+        document.getElementById('movie-trailer').pause();
+        document.getElementById('movie-trailer').currentTime = 0;
+        document.getElementById('video-overlay').classList.remove('active');
+    }
+});
+document.getElementById('close-video').addEventListener('click', function () {
+    document.getElementById('video-overlay').classList.remove('active');
+=======
 const thumbnail = document.getElementById('thumbnail');
 const videoWrapper = document.getElementById('videoWrapper');
 const video = document.getElementById('myVideo');
@@ -164,6 +178,7 @@ video.addEventListener('ended', function() {
 document.getElementById("thumbnail").addEventListener("click", function() {
     // Show the video when thumbnail is clicked
     document.getElementById("videoWrapper").style.display = "block";
+>>>>>>> 7f5d12a6bca3fc2df38bace49042d98b32ff4716
 });
 
 document.getElementById("closeBtn").addEventListener("click", function() {
