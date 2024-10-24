@@ -8,8 +8,7 @@ const video = document.getElementById('video');
 const movieName = document.getElementById('movie-name');
 const movieDesc = document.getElementById('movie-desc');
 const container = document.getElementById('container');
-const theaterInfo = document.querySelectorAll(".theater-info");
-const th = document.getElementById('th');
+
 
 const movies = [
     { index: 1, summary: `Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance Authority, but instead recruits a variant of Wolverine to save his universe from extinction.`, title:"Deadpool And Wolverine" },
@@ -114,17 +113,5 @@ cityAboutElements.forEach(city => {
             const theaterInfo = city.querySelector('.theater-info');
             theaterInfo.style.display = 'none';
         }
-    });
-});
-
-theaterInfo.forEach(theater => { 
-        Array.from(theater.getElementsByTagName('p')).forEach(p => {
-            p.addEventListener('click', (e) => {
-                // console.log(e.target.innerHTML);
-                // theater.innerHTML = e.target.innerHTML;
-                let val = e.target.innerHTML;
-                // console.log(val);
-                th.innerHTML = val;
-        });
     });
 });

@@ -53,6 +53,10 @@ body {
     object-fit: cover;
 }
 
+nav ul li:hover {
+    border-bottom: 2px solid white;
+}
+
 .btn {
     padding: 5px 13px;
     background: transparent;
