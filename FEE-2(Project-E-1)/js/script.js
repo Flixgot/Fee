@@ -9,3 +9,8 @@ registerBtn.addEventListener('click', () => {
 loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
+
+function toggleMenu() {
+    const navbarRight = document.getElementById("navbar-right");
+    navbarRight.classList.toggle("active");
+}

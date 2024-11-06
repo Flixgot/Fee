@@ -178,11 +178,20 @@
 }
 
 /* Card Sections Style Adjustments */
-.card-sections {
-    width: calc(100% - 40px); /* Full width minus padding on both sides */
-    height:auto ;/* Set to auto to allow dynamic height based on content*/
+/* .card-sections {
+    width: calc(100% - 40px);
+    height:auto ;
     display:flex ;
-    overflow-x:auto ;/* Allow horizontal scrolling if needed*/
+    overflow-x:auto ;
     border-radius :8px ;
     gap: 0px;
-}
+    
+} */
+
+
+
+
+
+
+
+

@@ -800,7 +800,7 @@ body {
     .overlay {
         left: 40%;
         transform: translate(-40%, -50%);
-        max-width: 90%;
+        max-width: 70%;
         padding: 15px;
     }
     

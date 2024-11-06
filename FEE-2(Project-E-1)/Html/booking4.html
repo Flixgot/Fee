@@ -1,123 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Detail - BookMyShow Clone</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/about.css">
-    <link rel="stylesheet" href="../css/booking.css">
+    <title>Movie Booking Clone</title>
+    <link rel="stylesheet" href="..//css/booking_remake.css">
+    <link rel="stylesheet" href="..//css/booking.css">
 </head>
+
 <body>
-    <nav id="navbar">
-        <ul id="navbar-right">
-            <div class="logo"><span id="name">FlixGot</span>
-                <i class="fa-solid fa-clapperboard" id="img"></i>
-            </div>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Theatre</a></li>
-            <li><a href="#">City</a></li>
-            <input type="text" placeholder="Search Movies" id="search">
+    <header class="header">
+        <a href="" class="logo">Flixgot</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            
+            <li><a href="#work" style="color: aliceblue;">Home</a></li>
+          <li><a href="#work" style="color: aliceblue;">City</a></li>
+          <li><a href="#about" style="color: aliceblue;">About</a></li>
+          <li><a href="#careers" style="color: aliceblue;">About us</a></li>
+          <li><a href="#contact" style="color: aliceblue;">Contact us</a></li>
         </ul>
-        <ul id="navbar-left">
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <button id="LogSign" class="btn">Login/Sign Up</button>
-        </ul>
-    </nav>
-
-    <div class="movie-detail-container">
-        <div class="movie-banner">
-            <div class="poster-card">
-                <div class="container">
-                    <!-- Image that the user clicks to trigger the video -->
-                    <img id="thumbnail" src="../Files/images/stree2.jpg" alt="Movie Poster" class="thumbnail">
-                   
-                    
-                    <!-- Hidden video element -->
-                    <div class="video-wrapper" id="videoWrapper">
-                        <button class="close-btn" id="closeBtn">&times;</button>
-                        <video id="myVideo" width="800" height="450" controls>
-                            <source src="../Files/vedio/stree2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </div>
-            <img src="../Files/images/pixelcut-export.jpeg" alt="Movie Banner" class="banner-img">
-            <div class="overlay">
-                <h1>Movie Title</h1>
-                <p>Genre: Action, Adventure | Duration: 2h 30m</p>
-                <div class="rating-book">
-                    <div class="rating-container">
-                        <div class="live-rating">
-                            <span id="average-rating">8.5</span>/10
-                        </div>
-                        <div class="user-rating">
-                            <span>Rate this movie:</span>
-                            <div class="stars">
-                                <span data-value="1">&#9733;</span>
-                                <span data-value="2">&#9733;</span>
-                                <span data-value="3">&#9733;</span>
-                                <span data-value="4">&#9733;</span>
-                                <span data-value="5">&#9733;</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="book-now" onclick="window.location.href='booktickets.html'">Book Now</button>
-                </div>
-            </div>
+      </header>
+    <!-- Banner Image with Poster Overlay -->
+    <div class="banner">
+        <img src="..//Files/images/deadpoolwol.avif" alt="Banner Image">
+        <div class="poster-overlay">
+            <img id="poster" src="..//Files/images/deadpool.png" alt="Movie Poster">
         </div>
-
-        <div class="movie-info">
-            <h2 style="color: aliceblue;">About the Movie</h2>
-            <p style="color: aliceblue;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquet magna, sed tincidunt lorem pretium sit amet. Morbi nec nisi vehicula, congue sem a, tempor lectus.</p>
-
-            <h2 style="color: aliceblue;">Cast & Crew</h2>
-            <ul>
-               <li style="color: aliceblue;">Director: John Doe</li>
-                <li style="color: aliceblue;">Cast: Jane Doe, John Smith, Emma Brown</li>
-            </ul>
-
-            <h2 style="color: aliceblue;">Showtimes</h2>
-            <p style="color: aliceblue;">Select your preferred time and theater:</p>
-            <ul>
-                <li style="color: aliceblue;">Theater 1 - 12:00 PM, 3:00 PM, 6:00 PM</li>
-                <li style="color: aliceblue;">Theater 2 - 1:00 PM, 4:00 PM, 7:00 PM</li>
-            </ul>
-        </div>
-<hr>
-
-<br>
-<h2 style="color: aliceblue;">You might also like</h2>
-<br>
-
-        <div class="slider-container">
-            <button class="slider-btn prev-btn" onclick="movePrev()">&#10094;</button>
-            <div class="slider" id="slider">
-                <img src="../Files/images/3.jpeg" alt="Movie 1">
-                <img src="../Files/images/stree2.jpg" alt="Movie 2">
-                <img src="../Files/images/stree2.jpg" alt="Movie 3">
-                <img src="../Files/images/stree2.jpg" alt="Movie 4">
-                <img src="../Files/images/deadpool.png" alt="Movie 1"> 
-                <img src="../Files/images/4.jpeg" alt="Movie 2"> 
-            </div>
-            <button class="slider-btn next-btn" onclick="moveNext()">&#10095;</button>
-        </div>
-        
-        
     </div>
 
-    <div id="video-overlay">
-        <div class="video-container">
-            <button id="close-video" class="close-btn">&times;</button>
-            <video controls>
-                <source src="Deadpool.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <div class="booking-page">
+        <div class="right-section">
+            <div class="movie-info">
+                <h1>Bhool Bhulaiyaa 3</h1>
+                <div class="rating">
+                    <span class="star">⭐</span>
+                    <span class="score">6.2/10</span>
+                    <span class="votes">(31.7K Votes)</span>
+                    <button class="rate-now">Rate now</button>
+                </div>
+                <div class="details">
+                    <button class="format">2D</button>
+                    <button class="language">Hindi</button>
+                    <p>2h 38m • Comedy, Horror • UA • 1 Nov, 2024</p>
+                </div>
+                <button class="book-tickets">Book tickets</button>
+            </div>
         </div>
     </div>
-    <footer class="site-footer">
+    <div class="about">
+        <h2>About the movie</h2>
+        <p>Gear up to tickle your funny bones with some thrill. The gates of 'haveli' will now open again for Bhool
+            Bhulaiyaa 3!</p>
+    </div>
+    <br><br>
+    <hr style="color: aliceblue;">
+    <div class="cast-crew">
+        <h2>Cast</h2>
+        <div class="cast-scroll">
+            <div class="cast-member">
+                <img src="path/to/cast_member1.jpg" alt="Cast Member 1">
+                <div class="cast-info">
+                    <p class="name">Actor Name 1</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+            <div class="cast-member">
+                <img src="path/to/cast_member2.jpg" alt="Cast Member 2">
+                <div class="cast-info">
+                    <p class="name">Actor Name 2</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+            <div class="cast-member">
+                <img src="path/to/cast_member3.jpg" alt="Cast Member 3">
+                <div class="cast-info">
+                    <p class="name">Actor Name 3</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+            <div class="cast-member">
+                <img src="path/to/cast_member4.jpg" alt="Cast Member 4">
+                <div class="cast-info">
+                    <p class="name">Actor Name 4</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+            <div class="cast-member">
+                <img src="path/to/cast_member5.jpg" alt="Cast Member 5">
+                <div class="cast-info">
+                    <p class="name">Actor Name 5</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+            <div class="cast-member">
+                <img src="path/to/cast_member6.jpg" alt="Cast Member 6">
+                <div class="cast-info">
+                    <p class="name">Actor Name 6</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <hr style="color: aliceblue;">
+        <br><br>
+        <!-- <h2>Crew</h2>
+        <br><br>
+        <div class="crew-scroll">
+            <div class="crew-member">
+                <img src="path/to/crew_member1.jpg" alt="Crew Member 1">
+                <div class="crew-info">
+                    <p class="name">Crew Member 1</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+            <div class="crew-member">
+                <img src="path/to/crew_member2.jpg" alt="Crew Member 2">
+                <div class="crew-info">
+                    <p class="name">Crew Member 2</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+            <div class="crew-member">
+                <img src="path/to/crew_member3.jpg" alt="Crew Member 3">
+                <div class="crew-info">
+                    <p class="name">Crew Member 3</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+            <div class="crew-member">
+                <img src="path/to/crew_member4.jpg" alt="Crew Member 4">
+                <div class="crew-info">
+                    <p class="name">Crew Member 4</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+            <div class="crew-member">
+                <img src="path/to/crew_member5.jpg" alt="Crew Member 5">
+                <div class="crew-info">
+                    <p class="name">Crew Member 5</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+            <div class="crew-member">
+                <img src="path/to/crew_member6.jpg" alt="Crew Member 6">
+                <div class="crew-info">
+                    <p class="name">Crew Member 6</p>
+                    <p class="role">Role</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!-- <br><br> -->
+    <!-- <hr style="color: aliceblue;"> -->
+    <br><br>
+    <h1 style="color: red;">You might also like...</h1>
+    <div class="container">
+        <div class="slider-wrapper">
+          <button id="prev-slide" class="slide-button material-symbols-rounded">
+            chevron_left
+          </button>
+          <ul class="image-list">
+            <img class="image-item" src="..//Files/images/stree2.jpg" alt="img-1" />
+            <img class="image-item" src="..//Files/images/stree2.jpg" alt="img-1" />
+            <img class="image-item" src="..//Files/images/stree2.jpg" alt="img-1" />
+            <img class="image-item" src="..//Files/images/stree2.jpg" alt="img-1" />
+            <img class="image-item" src="..//Files/images/stree2.jpg" alt="img-1" />
+            <img class="image-item" src="..//Files/images/stree2.jpg" alt="img-1" />
+            <img class="image-item" src="..//Files/images/stree2.jpg" alt="img-1" />
+            <img class="image-item" src="..//Files/images/stree2.jpg" alt="img-1" />
+          </ul>
+         
+        </div>
+        
+      </div>
+
+
+      <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-logo">
                 <h2>Flixgot</h2>
@@ -144,9 +205,7 @@
             <p>&copy; 2024 Flixgot. All rights reserved.</p>
         </div>
     </footer>
-    </div>
-    
-    <script src="../js/script1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+      <script src="..//js/script1.js"></script>
 </body>
+
 </html>

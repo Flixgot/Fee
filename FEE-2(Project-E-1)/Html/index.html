@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/utils.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 
@@ -16,7 +17,7 @@
 <body>
     <div id="container">
         <video src="../Files/vedio/WhatsApp Video 2024-08-30 at 1.17.03 PM.mp4" id="video" autoplay muted></video>
-        <nav id="navbar">
+        <!-- <nav id="navbar">
             <ul id="navbar-right">
                 <div class="logo"><span id="name">FixGot</span>
                     <i class="fa-solid fa-clapperboard" id="img"></i>
@@ -31,7 +32,37 @@
                 <li id="contact"><a href="contact.html">Contact Us</a></li>
                 <button id="LogSign" class="btn" onclick="window.location.href='login.html'">Login/Sign Up</button>
             </ul>
-        </nav>
+        </nav> -->
+
+        <nav id="navbar">
+    <ul id="navbar-right">
+        <div class="logo">
+            <span id="name">FixGot</span>
+            <i class="fa-solid fa-clapperboard" id="img"></i>
+        </div>
+        <li><a href="index.html">Home</a></li>
+        <li id="th"><a href="#">Theatre</a></li>
+        <li><a href="#">City</a></li>
+        <input type="text" placeholder="Search Movies" id="search">
+    </ul>
+    <ul id="navbar-left">
+        <li id="about"><a href="aboutus.html">About Us</a></li>
+        <li id="contact"><a href="contact.html">Contact Us</a></li>
+        <button id="LogSign" class="btn" onclick="window.location.href='login.html'">Login/Sign Up</button>
+    </ul>
+    <div id="hamburger" class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+
+      
+        
+           
+        
+        
+        
         <div id="movie-about">
             <div id="movie-name" class="font1">Deadpool And Wolverine</div>
             <div id="movie-desc" class="font2">"Deadpool 3" (2024) brings Deadpool into the Marvel Cinematic Universe
@@ -735,7 +766,7 @@
             <p>&copy; 2024 Flixgot. All rights reserved.</p>
         </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
     <script src="https://kit.fontawesome.com/28d81d093f.js" crossorigin="anonymous"></script>
 </body>
 
