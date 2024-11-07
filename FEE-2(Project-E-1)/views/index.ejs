@@ -70,7 +70,7 @@
                 <div class="logo"><span id="name">FixGot</span>
                     <i class="fa-solid fa-clapperboard" id="img"></i>
                 </div>
-                <li><a href="/home">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#" id="th">Theatre</a></li>
                 <li><a href="#" id="cityPage">City</a></li>
                 <input type="text" placeholder="Search Movies" id="search">
@@ -78,7 +78,10 @@
             <ul id="navbar-left">
                 <li id="about"><a href="/about">About Us</a></li>
                 <li id="contact"><a href="/contact">Contact Us</a></li>
-                <button id="LogSign" class="btn" onclick="window.location.href='/login'">Login/Sign Up</button>
+                <button id="LogSign" class="btn" onclick="window.location.href='/login'">
+                    <%= (user.username !== "") ? user.username : "Login/Sign Up" %>
+                </button>
+                
             </ul>
         </nav>
         

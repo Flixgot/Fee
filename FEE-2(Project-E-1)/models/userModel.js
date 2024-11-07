@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/movie-booking');
 
 const userSchema = mongoose.Schema({
-    Username: String,
+    username: String,
     email: String,
     password: String,
     bookedSeats: {

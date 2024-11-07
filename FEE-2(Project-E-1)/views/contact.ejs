@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,11 +36,13 @@
             line-height: 1.5;
         }
 
-        .contact-info, .contact-form {
+        .contact-info,
+        .contact-form {
             margin-bottom: 50px;
         }
 
-        .contact-info h2, .contact-form h2 {
+        .contact-info h2,
+        .contact-form h2 {
             font-size: 28px;
             margin-bottom: 20px;
         }
@@ -54,7 +57,8 @@
             flex-direction: column;
         }
 
-        .contact-form input, .contact-form textarea {
+        .contact-form input,
+        .contact-form textarea {
             padding: 15px;
             margin-bottom: 20px;
             border: none;
@@ -64,7 +68,8 @@
             font-size: 16px;
         }
 
-        .contact-form input::placeholder, .contact-form textarea::placeholder {
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
             color: #888;
         }
 
@@ -76,84 +81,93 @@
         }
 
         #search {
-    width: 35%;
-    outline: none;
-    border: 2px solid antiquewhite;
-    background-color: transparent;
-    border-radius: 8px;
-    font-weight: bold;
-    padding: 7px 6px;
-    position: absolute;
-    right: 86px;
-    top: 1px;
-    color: beige;
-}
-#navbar-right {
-    display: flex;
-    width: 70%;
-    list-style: none;
-    padding: 0px 23px;
-    /* background-color: orange; */
-}
-#navbar-left {
-    position: absolute;
-    right: 4px;
-    display: flex;
-    justify-content: space-between;
-    /* background-color: orange; */
-    list-style: none;
-    top: 0px;
-    padding: 0px 33px;
-}
-@media only screen and (max-width:587px){
-    #search{
-        display: none;
-    }
-}
-</style>
+            width: 35%;
+            outline: none;
+            border: 2px solid antiquewhite;
+            background-color: transparent;
+            border-radius: 8px;
+            font-weight: bold;
+            padding: 7px 6px;
+            position: absolute;
+            right: 86px;
+            top: 1px;
+            color: beige;
+        }
+
+        #navbar-right {
+            display: flex;
+            width: 70%;
+            list-style: none;
+            padding: 0px 23px;
+            /* background-color: orange; */
+        }
+
+        #navbar-left {
+            position: absolute;
+            right: 4px;
+            display: flex;
+            justify-content: space-between;
+            /* background-color: orange; */
+            list-style: none;
+            top: 0px;
+            padding: 0px 33px;
+        }
+
+        @media only screen and (max-width: 587px) {
+            #search {
+                display: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="container">
-    <nav id="navbar">
-        <ul id="navbar-right">
-            <div class="logo"><span id="name">FixGot</span>
-                <i class="fa-solid fa-clapperboard" id="img"></i>
-            </div>
-            <li><a href="index.html">Home</a></li>
-            <li id="th"><a href="#">Theatre</a></li>
-            <li><a href="#">City</a></li>
-            <input type="text" placeholder="Search Movies" id="search">
-        </ul>
-        <ul id="navbar-left">
-            <li id="about"><a href="aboutus.html">About Us</a></li>
-            <li id="contact"><a href="#">Contact Us</a></li>
-            <button id="LogSign" class="btn" onclick="window.location.href='login.html'">Login/Sign Up</button>
-        </ul>
-    </nav>
-    <div class="content">
-        <h1>Contact Us</h1>
-        <p>If you have any questions, feedback, or need assistance, don't hesitate to reach out. Our team is here to help you with anything you need.</p>
-        
-        <div class="contact-info">
-            <h2>Contact Information</h2>
-            <p>📞 Phone: +91 233 23233 22</p>
-            <p>✉️ Email: support@fixgot.com</p>
-            <p>🏢 Address: 124 Cinema Street, Zirakpur, 140609, India</p>
-        </div>
+    <div class="container">
+        <nav id="navbar">
+            <ul id="navbar-right">
+                <div class="logo"><span id="name">FixGot</span>
+                    <i class="fa-solid fa-clapperboard" id="img"></i>
+                </div>
+                <li><a href="/">Home</a></li>
+                <li id="th"><a href="#">Theatre</a></li>
+                <li><a href="#">City</a></li>
+                <input type="text" placeholder="Search Movies" id="search">
+            </ul>
+            <ul id="navbar-left">
+                <li id="about"><a href="/about">About Us</a></li>
+                <li id="contact"><a href="/contact">Contact Us</a></li>
+                <% if (user && user.username) { %> 
+                    <button id="LogSign" class="btn" onclick="window.location.href='/login'"><%=user.username%></button>
+                <% } else { %>
+                    <button id="LogSign" class="btn" onclick="window.location.href='/login'">Login/Sign Up</button>
+                <% } %>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1>Contact Us</h1>
+            <p>If you have any questions, feedback, or need assistance, don't hesitate to reach out. Our team is here to help you with anything you need.</p>
 
-        <div class="contact-form">
-            <h2>Send Us a Message</h2>
-            <form action="#">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="text" name="subject" placeholder="Subject">
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>📞 Phone: +91 233 23233 22</p>
+                <p>✉️ Email: support@fixgot.com</p>
+                <p>🏢 Address: 124 Cinema Street, Zirakpur, 140609, India</p>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form action="#">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 </body>
+
 </html>

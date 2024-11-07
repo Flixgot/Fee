@@ -9,252 +9,283 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-body{
-    background-color: rgba(0, 0, 0, 0.795);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-}
+        body {
+            background-color: rgba(0, 0, 0, 0.795);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            position: relative; /* Allow positioning of logout button */
+        }
 
-.container{
-    background-color: #fff;
-    border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.35);
-    position: relative;
-    overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
-}
+        .container {
+            background-color: #fff;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.35);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            min-height: 480px;
+        }
 
-.container p{
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.3px;
-    margin: 20px 0;
-}
+        .container p {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.3px;
+            margin: 20px 0;
+        }
 
-.container span{
-    font-size: 12px;
-}
+        .container span {
+            font-size: 12px;
+        }
 
-.container a{
-    color: #333;
-    font-size: 13px;
-    text-decoration: none;
-    margin: 15px 0 10px;
-}
+        .container a {
+            color: #333;
+            font-size: 13px;
+            text-decoration: none;
+            margin: 15px 0 10px;
+        }
 
-.container button{
-    background-color: rgb(0,0,0);
-    color: #fff;
-    font-size: 12px;
-    padding: 10px 45px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        .container button {
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+            font-size: 12px;
+            padding: 10px 45px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+        }
 
-.container button.hidden{
-    background-color: transparent;
-    border-color: #fff;
-}
+        .container button.hidden {
+            background-color: transparent;
+            border-color: #fff;
+        }
 
-.container input[type='submit']{
-    background-color: rgb(0,0,0);
-    color: #fff;
-    font-size: 12px;
-    padding: 10px 45px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-top: 10px;
-    cursor: pointer;
-}
+        .container input[type='submit'] {
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+            font-size: 12px;
+            padding: 10px 45px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+        }
 
-.container form{
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    height: 100%;
-}
+        .btn {
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+            font-size: 12px;
+            padding: 10px 45px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+        }
 
-.container input{
-    background-color: #eee;
-    border:none;
-    margin: 8px 0;
-    padding: 10px 15px;
-    font-size: 13px;
-    border-radius: 8px;
-    width: 100%;
-    outline: none;
-}
+        .container form {
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            height: 100%;
+        }
 
-.form-container{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-}
+        .container input {
+            background-color: #eee;
+            border: none;
+            margin: 8px 0;
+            padding: 10px 15px;
+            font-size: 13px;
+            border-radius: 8px;
+            width: 100%;
+            outline: none;
+        }
 
-.sign-in{
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+        }
 
-.container.active .sign-in{
-    transform: translateX(100%);
-}
+        .sign-in {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
 
-.sign-up{
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
+        .container.active .sign-in {
+            transform: translateX(100%);
+        }
 
-.container.active .sign-up{
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: move 0.6s;
-}
+        .sign-up {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
 
-@keyframes move{
-    0%, 49.99%{
-        opacity: 0;
-        z-index: 1;
-    }
-    50%, 100%{
-        opacity: 1;
-        z-index: 5;
-    }
-}
+        .container.active .sign-up {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: move 0.6s;
+        }
 
-.social-icons{
-    margin: 20px 0;
-}
+        @keyframes move {
+            0%, 49.99% {
+                opacity: 0;
+                z-index: 1;
+            }
+            50%, 100% {
+                opacity: 1;
+                z-index: 5;
+            }
+        }
 
-.social-icons a{
-    border: 1px solid #ccc;
-    border-radius: 20%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px;
-    width: 40px;
-    height: 40px;
-}
+        .social-icons {
+            margin: 20px 0;
+        }
 
-.toggle-container{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: all 0.6s ease-in-out;
-    border-radius: 20px;
-    z-index: 1000;
-}
+        .social-icons a {
+            border: 1px solid #ccc;
+            border-radius: 20%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 3px;
+            width: 40px;
+            height: 40px;
+        }
 
-.container.active .toggle-container{
-    transform: translateX(-100%);
-    border-radius: 20px;
-}
+        .toggle-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: all 0.6s ease-in-out;
+            border-radius: 20px;
+            z-index: 1000;
+        }
 
-.toggle{
-    background-color: rgba(0,0,0);
-    height: 100%;
-    color: #fff;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-}
+        .container.active .toggle-container {
+            transform: translateX(-100%);
+            border-radius: 20px;
+        }
 
-.container.active .toggle{
-    transform: translateX(50%);
-}
+        .toggle {
+            background-color: rgba(0, 0, 0);
+            height: 100%;
+            color: #fff;
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateX(0);
+            transition: all 0.6s ease-in-out;
+        }
 
-.toggle-panel{
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 30px;
-    text-align: center;
-    top: 0;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-}
+        .container.active .toggle {
+            transform: translateX(50%);
+        }
 
-.toggle-left{
-    transform: translateX(-200%);
-}
+        .toggle-panel {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 30px;
+            text-align: center;
+            top: 0;
+            transform: translateX(0);
+            transition: all 0.6s ease-in-out;
+        }
 
-.container.active .toggle-left{
-    transform: translateX(0);
-}
+        .toggle-left {
+            transform: translateX(-200%);
+        }
 
-.toggle-right{
-    right: 0;
-    transform: translateX(0);
-}
+        .container.active .toggle-left {
+            transform: translateX(0);
+        }
 
-.flash-box{
-    width: 26%;
-    height: 4%;
-    background-color: red;
-    color: white;
-    text-align: center;
-    padding: 3px 4px;
-    position: absolute;
-    top: 0;
-}
+        .toggle-right {
+            right: 0;
+            transform: translateX(0);
+        }
 
+        .flash-box {
+            width: 26%;
+            height: 4%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 3px 4px;
+            position: absolute;
+            top: 0;
+        }
+
+        .logout-btn {
+            position: absolute;
+            top: 20px; /* Adjust as needed */
+            left: 20px; /* Adjust as needed */
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure it's above other elements */
+        }
     </style>
 </head>
 
-
 <body>
-    <% if(err && err.length>0){%>
-        <div class="flash-box"><%=err %></div>
-    <%} %>
-    <div class="container" id="container">
+    <% if(err && err.length > 0) { %>
+        <div class="flash-box"><%= err %></div>
+    <% } %>
+    
+    <% if (user.username) { %> <!-- Check if user is logged in -->
+        <form action="/logout" method="post" style="margin: 0;">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
+    <% } %>
 
+    <div class="container" id="container">
         <div class="form-container sign-up">
             <form action="/create" method="post">
                 <h1 style="margin-bottom: 8px;">Create Account</h1>
-                
                 <span>Register with E-mail</span>
-                <input type="text" placeholder="Name" name="name">
-                <input type="email" placeholder="Enter E-mail" name="email">
-                <input type="password" placeholder="Enter Password" name="password">
+                <input type="text" placeholder="Name" name="name" required>
+                <input type="email" placeholder="Enter E-mail" name="email" required>
+                <input type="password" placeholder="Enter Password" name="password" required>
                 <input type="submit" value="Sign-up">
             </form>
         </div>
@@ -263,10 +294,15 @@ body{
             <form action="/login" method="post">
                 <h1 style="margin-bottom: 8px;">Sign In</h1>
                 <span>Login With Email & Password</span>
-                <input name="email" type="email" placeholder="Enter E-mail">
-                <input name="password" type="password" placeholder="Enter Password">
+                <input name="email" type="email" placeholder="Enter E-mail" required>
+                <input name="password" type="password" placeholder="Enter Password" required>
                 <input type="submit" value="Sign-in">
             </form>
+            <% if (user.username) { %> <!-- Check if user is logged in -->
+                <form action="/logout" method="post" style="margin-top: 10px;">
+                    <button type="submit" class="btn">Logout</button>
+                </form>
+            <% } %>
         </div>
 
         <div class="toggle-container">
